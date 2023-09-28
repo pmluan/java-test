@@ -1,0 +1,11 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ÿìû‚øÿÿÿÿ
+W
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ÿä½å
+V	java:S125*"<This block of commented-out lines of code should be removed.(¾Ãëøûÿÿÿÿ
+\
+java:S10755"ARefactor your code to get this URI from a customizable parameter.(‰øáûÿÿÿÿ
+D
+java:S14815")Remove this unused "font" local variable.(‰øáûÿÿÿÿ
+L
+java:S1144"6Remove this unused private "generateHtmlToPdf" method.(‰ÏÜ½
