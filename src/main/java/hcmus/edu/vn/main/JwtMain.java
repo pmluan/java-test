@@ -1,21 +1,19 @@
 package hcmus.edu.vn.main;
 
-import java.util.Collections;
-import java.util.Map;
-
+import com.auth0.jwt.exceptions.JWTDecodeException;
+import hcmus.edu.vn.utils.JWTUtil;
+import hcmus.edu.vn.utils.Jackson;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.impl.TextCodec;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.auth0.jwt.exceptions.JWTDecodeException;
-
-import hcmus.edu.vn.common.MapperCommon;
-import hcmus.edu.vn.utils.JWTUtil;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.impl.TextCodec;
+import java.util.Collections;
+import java.util.Map;
 
 public class JwtMain {
 
@@ -37,7 +35,7 @@ public class JwtMain {
     private static Map<String, Object> decodeJwtClaims(String secretKey, String token) {
         try {
             Jws<Claims> jwt = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
-            String jwtLog = MapperCommon.toJsonString(jwt);
+            String jwtLog = Jackson.toJsonString(jwt);
             LOGGER.info("decodeJwt - jwt: {}", jwtLog);
 
             Map<String, Object> claims = jwt.getBody();

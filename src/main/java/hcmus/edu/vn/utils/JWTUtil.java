@@ -28,7 +28,6 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
-import hcmus.edu.vn.common.MapperCommon;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtBuilder;
@@ -169,7 +168,7 @@ public class JWTUtil {
     public static Map<String, Object> decodeJwtCliams(String secretKey, String token) {
 		try {
 			Jws<Claims> jwt = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
-			String jwtLog = MapperCommon.toJsonString(jwt);
+			String jwtLog = Jackson.toJsonString(jwt);
 			LOGGER.info("decodeJwt - jwt: {}", jwtLog);
 			
 			Map<String, Object> claims = jwt.getBody();

@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import hcmus.edu.vn.utils.Jackson;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
 
-import hcmus.edu.vn.common.MapperCommon;
+
 import hcmus.edu.vn.models.AcctItem;
 import hcmus.edu.vn.models.TestModel;
 
@@ -24,7 +25,7 @@ public class Main {
 
 		String json = "[{\"acctno\":\"1\",\"custName\":\"2\"},{\"acctno\":\"1\",\"custName\":\"3\"},{\"acctno\":\"2\",\"custName\":\"2\"},{\"acctno\":\"3\",\"custName\":\"2\"},{\"acctno\":\"1\",\"custName\":\"5\"},{\"acctno\":\"1\",\"custName\":\"2\"}]";
 
-		List<AcctItem> acctItems = MapperCommon.stringToList(json, AcctItem.class);
+		List<AcctItem> acctItems = Jackson.stringToList(json, AcctItem.class);
 
 		List<TestModel> list = new ArrayList<>();
 
@@ -54,7 +55,7 @@ public class Main {
 
 		}
 
-		System.out.println(MapperCommon.toJsonString(list));
+		System.out.println(Jackson.toJsonString(list));
 	}
 
 	public static String formatDate(String dateStr, String currentPatter, String newPattern) {

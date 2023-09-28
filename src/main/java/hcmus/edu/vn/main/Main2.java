@@ -1,5 +1,15 @@
 package hcmus.edu.vn.main;
 
+import hcmus.edu.vn.utils.JWTUtil;
+import hcmus.edu.vn.utils.Jackson;
+import hcmus.edu.vn.utils.RSAUtil;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.crypto.Cipher;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -9,18 +19,6 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.crypto.Cipher;
-
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.collections4.MapUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import hcmus.edu.vn.common.MapperCommon;
-import hcmus.edu.vn.utils.JWTUtil;
-import hcmus.edu.vn.utils.RSAUtil;
 
 public class Main2 {
 
@@ -77,7 +75,7 @@ public class Main2 {
 		String json = "{\"error\":[{\"partner\":\"vnpay\",\"code\":[{\"inquiry\":[{\"00\":\"Success\",\"01\":\"Error\"}]},{\"payment\":[{\"00\":\"Success\"}]}]}]}";
 
 		try {
-			ErrorModel model = MapperCommon.fromJsonString(json, ErrorModel.class);
+			ErrorModel model = Jackson.fromJsonString(json, ErrorModel.class);
 			if (model == null) {
 				LOGGER.info("Can not parse json data");
 				return StringUtils.EMPTY;

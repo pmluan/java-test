@@ -1,9 +1,0 @@
-
-_
-java:S1854"=Remove this useless assignment to local variable "secretKey".(κ¨δÿÿÿÿÿ8σΐ°­1
-@	java:S106 "+Replace this use of System.out by a logger.(ρΤ
-E	java:S106C"+Replace this use of System.out by a logger.(ε’Εÿÿÿÿÿ
-O
-java:S1144%"4Remove this unused private "decodeJwtCliams" method.(Γιήψÿÿÿÿ
-I
-java:S1144@".Remove this unused private "decodeJwt" method.(ίε―ώωÿÿÿÿ

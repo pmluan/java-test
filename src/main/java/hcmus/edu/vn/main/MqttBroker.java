@@ -1,6 +1,6 @@
 package hcmus.edu.vn.main;
 
-import hcmus.edu.vn.common.MapperCommon;
+import hcmus.edu.vn.utils.Jackson;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.*;
 
@@ -29,7 +29,7 @@ public class MqttBroker {
         }
 
         MqttTopic mqttTopic = client.getTopic("test");
-        LOGGER.info("topic: {}", MapperCommon.toJsonString(mqttTopic));
+        LOGGER.info("topic: {}", Jackson.toJsonString(mqttTopic));
 
         CountDownLatch receivedSignal = new CountDownLatch(1);
         client.subscribe("test", (topic, msg) -> {

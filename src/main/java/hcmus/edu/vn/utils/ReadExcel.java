@@ -28,8 +28,8 @@ public class ReadExcel {
 //		List<ExampleModel> newDatas1 = newDatas.stream()
 //				.filter(item -> StringUtils.equalsAnyIgnoreCase(item.getBranch(), data)).toList();
 //
-//		System.out.println(MapperCommon.toJsonString(lives1));
-//		System.out.println(MapperCommon.toJsonString(newDatas1));
+//		System.out.println(Jackson.toJsonString(lives1));
+//		System.out.println(Jackson.toJsonString(newDatas1));
 //		
 //	}
 //

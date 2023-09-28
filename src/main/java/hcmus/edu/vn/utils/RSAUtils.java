@@ -36,7 +36,6 @@ public class RSAUtils {
      * @param plainText the {@code plainText} value to be encrypted
      * @param publicKey the {@code publicKey} value
      * @return an encrypted based64 value
-     * @throws CustomiseException
      */
     public static String encryptRsa256(String plainText, String publicKey) {
         if (StringUtils.isBlank(publicKey)) {
@@ -64,7 +63,6 @@ public class RSAUtils {
      * @param encryptedText the text to be decrypted
      * @param privateKey the {@code privateKey} value
      * @return the plain text value
-     * @throws CustomiseException
      */
     public static String decryptRsa256(String encryptedText, String privateKey) {
         if (StringUtils.isBlank(privateKey)) {
@@ -90,7 +88,6 @@ public class RSAUtils {
      * 
      * @param privateKey the private key value
      * @return a {@link PrivateKey}
-     * @throws CustomiseException
      */
     public static PrivateKey getPrivateKey(String privateKey) {
         if (StringUtils.isBlank(privateKey)) {
@@ -112,7 +109,6 @@ public class RSAUtils {
      * 
      * @param publicKey the public key value
      * @return a {@link PublicKey}
-     * @throws CustomiseException
      */
     public static PublicKey getPublicKey(String publicKey) {
         if (StringUtils.isBlank(publicKey)) {
